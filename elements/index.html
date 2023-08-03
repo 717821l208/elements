@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+         <title>Change Text Color</title> 
+</head>
+<body>
+    <h1> <input type="text" id="myText" > </h1>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        function changeColor() {
+            const myTextElement = document.getElementById("myText");
+            const randomColor = getRandomColor();
+            myTextElement.style.color = randomColor;
+        }
+
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        const colorButton = document.getElementById("colorButton");
+        colorButton.addEventListener("click", changeColor);
+    </script>
+</body>
+</html>
